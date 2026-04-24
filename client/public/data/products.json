@@ -1,58 +1,43 @@
 {
   "products": [
-    {
-      "id": 1,
-      "name": "Spirit Wolf T-Shirt",
-      "description": "Premium cotton t-shirt featuring the iconic Spirit Wolf logo. Soft, comfortable, and perfect for everyday wear. Available in sizes S-XXL.",
-      "price": 299,
-      "imageUrl": "/images/logox1000.png",
-      "isSold": false,
-      "category": "art"
-    },
-    {
-      "id": 2,
-      "name": "Spirit Wolf Hoodie",
-      "description": "Cozy fleece hoodie with embroidered Spirit Wolf design. Features a kangaroo pocket and adjustable drawstring hood. Perfect for cool evenings.",
-      "price": 549,
-      "imageUrl": "/images/night-sky.png",
-      "isSold": false,
-      "category": "art"
-    },
-    {
-      "id": 3,
-      "name": "Spirit Wolf Art Print",
-      "description": "High-quality art print of the original Spirit Wolf artwork. Printed on premium matte paper, ready to frame. Size: 18x24 inches.",
-      "price": 399,
-      "imageUrl": "/images/mixed1.png",
-      "isSold": false,
-      "category": "art"
-    },
-    {
-      "id": 4,
-      "name": "Spirit Wolf Mug",
-      "description": "Ceramic coffee mug featuring the Spirit Wolf design. Dishwasher and microwave safe. Holds 15oz of your favorite beverage.",
-      "price": 149,
-      "imageUrl": "/images/spirit-wolf-hero.png",
-      "isSold": false,
-      "category": "accessories"
-    },
-    {
-      "id": 5,
-      "name": "Spirit Wolf Sticker Pack",
-      "description": "Set of 5 vinyl stickers featuring various Spirit Wolf designs. Waterproof and UV resistant. Perfect for laptops, water bottles, and more.",
-      "price": 99,
-      "imageUrl": "/images/mixed1.png",
-      "isSold": false,
-      "category": "accessories"
-    },
-    {
-      "id": 6,
-      "name": "Spirit Wolf Cap",
-      "description": "Adjustable snapback cap with embroidered Spirit Wolf logo. One size fits most. Available in navy and black.",
-      "price": 249,
-      "imageUrl": "/images/spirit-wolf-hero.png",
-      "isSold": false,
-      "category": "apparel"
-    }
+    {"id":1,"name":"Moonbound Howl","description":"A wolf beneath a fractured moon, channeling instinct, ancestry, and the pull of the unseen.","price":2000,"imageUrl":"/images/wolves1.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":2,"name":"Silent Watcher","description":"A lone wolf rendered in stark contrast, symbolizing vigilance, intelligence, and quiet authority.","price":2000,"imageUrl":"/images/wolves2.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":3,"name":"Roar of the Divide","description":"A symmetrical tiger visage split by chaos and color, representing duality and primal balance.","price":2000,"imageUrl":"/images/tiger1.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":4,"name":"Emberclaw","description":"A tiger emerging from raw texture and flame tones, embodying ferocity and untamed will.","price":2000,"imageUrl":"/images/tigers2.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":5,"name":"The Long Way Home","description":"A surreal landscape anchored by a solitary traveler, evoking reflection and inner return.","price":2000,"imageUrl":"/images/scene1.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":6,"name":"Dreamcatcher","description":"Intricate dreamcatcher design with sacred geometry and web-like patterns.","price":2000,"imageUrl":"/images/dreamcatcher.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":7,"name":"Flame","description":"Raw fire textures woven with primal energy and motion.","price":2000,"imageUrl":"/images/flame.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":8,"name":"Tribal","description":"Bold tribal patterns merging ancient symbolism with modern edge.","price":2000,"imageUrl":"/images/tribal.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":9,"name":"Splatter","description":"Dynamic paint splatter composition capturing chaos and creative release.","price":2000,"imageUrl":"/images/splatter.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":10,"name":"Mean","description":"Aggressive, bold design with sharp edges and unapologetic attitude.","price":2000,"imageUrl":"/images/mean.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":11,"name":"Mixed Media","description":"Layered mixed-media composition blending multiple styles and textures.","price":2000,"imageUrl":"/images/mixed1.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":12,"name":"Spirit Wolf Logo","description":"The iconic Spirit Wolf mark in full detail.","price":2000,"imageUrl":"/images/logox1000.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":13,"name":"Spirit Wolf Hero","description":"Hero banner artwork with dramatic composition.","price":2000,"imageUrl":"/images/spirit-wolf-hero.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":14,"name":"Cloudscape 1","description":"Ethereal cloud formation with soft atmospheric depth.","price":2000,"imageUrl":"/images/cloud1.jpg","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":15,"name":"Cloudscape 2","description":"Layered cloud textures with dreamlike light.","price":2000,"imageUrl":"/images/cloud2.jpg","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":16,"name":"Cloudscape 3","description":"Storm and sky with dramatic cloud interplay.","price":2000,"imageUrl":"/images/cloud3.jpg","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":17,"name":"Cloudscape 4","description":"Heavenly gradient clouds — peace and open sky.","price":2000,"imageUrl":"/images/cloud4.jpg","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":18,"name":"Design 1","description":"Original WolfMan artwork — 2048px canvas.","price":2000,"imageUrl":"/images/1.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":19,"name":"Design 2","description":"Original WolfMan artwork — bold composition.","price":2000,"imageUrl":"/images/2.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":20,"name":"Design 3","description":"Original WolfMan artwork — dynamic energy.","price":2000,"imageUrl":"/images/3.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":21,"name":"Design 4","description":"Original WolfMan artwork — textured depth.","price":2000,"imageUrl":"/images/4.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":22,"name":"Design 5","description":"Original WolfMan artwork — rich palette.","price":2000,"imageUrl":"/images/5.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":23,"name":"Design 6","description":"Original WolfMan artwork — intricate detail.","price":2000,"imageUrl":"/images/6.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":24,"name":"Design 7","description":"Original WolfMan artwork — vivid expression.","price":2000,"imageUrl":"/images/7.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":25,"name":"Design 8","description":"Original WolfMan artwork — striking contrast.","price":2000,"imageUrl":"/images/8.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":26,"name":"Design 9","description":"Original WolfMan artwork — bold finish.","price":2000,"imageUrl":"/images/9.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":27,"name":"Wolf Logo Primary","description":"Primary wolf logo mark — clean and iconic.","price":2000,"imageUrl":"/images/logo.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":28,"name":"Wolf Logo Alternate","description":"Alternate wolf logo variant with distinct styling.","price":2000,"imageUrl":"/images/logo1.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":29,"name":"Wolf Logo Only","description":"Wolf icon isolated — mark without text.","price":2000,"imageUrl":"/images/logoonly.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":30,"name":"SKU Design","description":"Product SKU design with clean layout.","price":2000,"imageUrl":"/images/sku.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":31,"name":"Wolf Abstract 1","description":"Abstract wolf composition — experimental texture.","price":2000,"imageUrl":"/images/1770073061901.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":32,"name":"Wolf Abstract 2","description":"Abstract wolf composition — expressive form.","price":2000,"imageUrl":"/images/1770073210766.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":33,"name":"Wolf Abstract 3","description":"Abstract wolf composition — fluid motion.","price":2000,"imageUrl":"/images/1770073429860.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":34,"name":"Wolf Abstract 4","description":"Abstract wolf composition — layered chaos.","price":2000,"imageUrl":"/images/1770073544683.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":35,"name":"Wolf Photo 1","description":"Wolf photography — natural light composition.","price":2000,"imageUrl":"/images/1771226840997 (1).jpeg","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":36,"name":"Wolf Photo 2","description":"Wolf photography — striking moment captured.","price":2000,"imageUrl":"/images/20260214_183046.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":37,"name":"Wolf Photo 3","description":"Wolf photography — atmospheric and moody.","price":2000,"imageUrl":"/images/20260214_183848.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":38,"name":"Wolf Photo 4","description":"Wolf photography — cinematic framing.","price":2000,"imageUrl":"/images/20260214_184721.png","isSold":false,"category":"design","artist":"WolfMan"},
+    {"id":39,"name":"Wolf Photo 5","description":"Wolf photography — raw wilderness portrait.","price":2000,"imageUrl":"/images/IMG_20260201_162427365_AE.jpg","isSold":false,"category":"design","artist":"WolfMan"}
   ]
 }

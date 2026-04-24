@@ -88,7 +88,7 @@ export default function ProductDetail() {
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-primary/80 font-mono text-sm tracking-wider">
                 <Sparkles className="w-4 h-4" />
-                <span>MYSTIC SERIES • NFT #{product.id.toString().padStart(4, '0')}</span>
+                <span>{product.category === 'design' ? 'WolfMan Design' : `MYSTIC SERIES • NFT #${product.id.toString().padStart(4, '0')}`}</span>
               </div>
               <h1 className="text-5xl lg:text-7xl font-display font-bold text-white leading-tight">
                 {product.name}
@@ -111,7 +111,7 @@ export default function ProductDetail() {
               ) : (
                 <div className="px-4 py-2 bg-green-500/20 border border-green-500/50 rounded-full text-green-400 flex items-center">
                   <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse" />
-                  Available for purchase
+                  Available for request
                 </div>
               )}
             </div>

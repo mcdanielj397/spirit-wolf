@@ -39,13 +39,11 @@ export function ProductCard({ product, index }: ProductCardProps) {
                 </Badge>
               </div>
             )}
-            {!isSold && (
-              <div className="absolute top-4 right-4 z-20">
-                <Badge className="bg-black/50 backdrop-blur-md border border-primary/30 text-primary font-mono hover:bg-black/70 transition-colors">
-                  NFT #{product.id.toString().padStart(3, '0')}
-                </Badge>
-              </div>
-            )}
+            <div className="absolute top-4 right-4 z-20">
+              <Badge className="bg-black/50 backdrop-blur-md border border-primary/30 text-primary font-mono hover:bg-black/70 transition-colors">
+                {product.category === 'design' ? 'Design' : `NFT #${product.id.toString().padStart(3, '0')}`}
+              </Badge>
+            </div>
           </div>
           
           <CardContent className="p-6 relative z-20">

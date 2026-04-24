@@ -1,0 +1,17 @@
+{
+  "name": "Roar of the Divide",
+  "description": "A symmetrical tiger visage split by chaos and color, representing duality, dominance, and primal balance.",
+  "image": "ipfs://",
+  "external_url": "https://alsania-io.com/",
+  "animation_url": null,
+  "artist_signature": "WolfMan",
+  "royalty": "3%",
+  "creator": "0x613deA6178DB562aE42F82754266ec8813c1A6c1",
+  "attributes": [
+    { "trait_type": "Theme", "value": "Duality" },
+    { "trait_type": "Symbolism", "value": "Dominance" },
+    { "trait_type": "Art Tool", "value": "Paintbrush" },
+    { "trait_type": "Edition", "value": "1 of 1" }
+  ],
+  "license": "ipfs://bafybeidotw52kcg4p5z2ntu566m37ri6y2ebucuqz6msckfgp2s6nngjji/license.txt.zip"
+}
