@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wolfpack Mint | Spirit Wolf</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0A0F1C;
+  --card: #121830;
+  --primary: #8B5CF6;
+  --primary-glow: rgba(139,92,246,0.4);
+  --text: #E2E8F0;
+  --muted: #94A3B8;
+  --border: rgba(255,255,255,0.08);
+  --success: #10B981;
+  --danger: #EF4444;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Lato', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+h1, h2, h3 { font-family: 'Cinzel', serif; }
+.container { max-width: 900px; width: 100%; display: flex; flex-direction: column; gap: 2rem; }
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+}
+.nav h1 { font-size: 1.4rem; background: linear-gradient(135deg, var(--primary), #A78BFA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+.nav a:hover { color: var(--primary); }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(12px);
+  transition: box-shadow 0.3s;
+}
+.card:hover { box-shadow: 0 0 30px var(--primary-glow); }
+.card h2 { font-size: 1.2rem; margin-bottom: 1rem; }
+
+.preview-stack {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #0d1122;
+  border: 1px solid var(--border);
+}
+.preview-stack canvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  width: 100%;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), #7C3AED);
+  color: white;
+}
+.btn-primary:hover { box-shadow: 0 0 20px var(--primary-glow); transform: translateY(-1px); }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+.btn-outline:hover { background: var(--primary); color: white; }
+
+.traits { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin: 1rem 0; }
+.trait-label { color: var(--muted); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.trait-value { font-family: 'Cinzel', serif; font-size: 0.9rem; }
+
+.status { text-align: center; padding: 0.5rem; border-radius: 8px; font-size: 0.85rem; margin-top: 0.5rem; }
+.status.success { background: rgba(16,185,129,0.15); color: var(--success); }
+.status.error { background: rgba(239,68,68,0.15); color: var(--danger); }
+.status.info { background: rgba(139,92,246,0.15); color: var(--primary); }
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 0.5rem; margin-top: 1rem; }
+.gallery img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; border: 1px solid var(--border); }
+.gallery img:hover { border-color: var(--primary); }
+
+.supply-bar-bg { background: rgba(255,255,255,0.1); border-radius: 8px; height: 8px; margin: 0.5rem 0; overflow: hidden; }
+.supply-bar-fill { background: linear-gradient(90deg, var(--primary), #A78BFA); height: 100%; border-radius: 8px; transition: width 0.3s; }
+</style>
+</head>
+<body>
+<div class="container">
+  <nav class="nav">
+    <h1>Wolfpack Mint</h1>
+    <div style="display:flex;gap:1rem;">
+      <a href="../">Back to Gallery</a>
+      <button class="btn btn-outline" id="connectBtn" style="width:auto;padding:0.5rem 1rem;">Connect Wallet</button>
+    </div>
+  </nav>
+  <div class="grid">
+    <div class="card">
+      <h2>Preview</h2>
+      <div class="preview-stack" id="previewContainer">
+        <canvas id="previewCanvas"></canvas>
+      </div>
+      <div class="traits" id="traitsContainer">
+        <div><span class="trait-label">Background</span><br><span class="trait-value" id="tBg">-</span></div>
+        <div><span class="trait-label">Stone</span><br><span class="trait-value" id="tStone">-</span></div>
+        <div><span class="trait-label">Wolf</span><br><span class="trait-value" id="tWolf">-</span></div>
+        <div><span class="trait-label">Aura</span><br><span class="trait-value" id="tAura">-</span></div>
+      </div>
+      <button class="btn btn-primary" id="shuffleBtn">Shuffle Preview</button>
+    </div>
+    <div class="card">
+      <h2>Mint a Wolf</h2>
+      <p style="color:var(--muted);font-size:0.9rem;">Price: 20 MATIC</p>
+      <div class="supply-bar-bg"><div class="supply-bar-fill" id="supplyBar" style="width:0%"></div></div>
+      <p style="font-size:0.8rem;color:var(--muted);"><span id="mintedCount">0</span> / 625 minted</p>
+      <button class="btn btn-primary" id="mintBtn" disabled>Mint Wolf</button>
+      <div id="statusContainer"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Recently Minted</h2>
+    <div class="gallery" id="gallery"></div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.16.0/dist/ethers.umd.min.js"></script>
+<script>
+const ADDRESS = '0x461C0dC291FdE5271e2BaB8d7595BD5ec78ce938';
+const COMPOSITE_CID = 'QmUkUUUhcs89VkqJzZAhP8wnDHzDwehDSbAri8QGHbChvZ';
+const TRAIT_NAMES = {
+  bg: ['Space','Smoke','Light','Ice','Fire'],
+  stone: ['Snow','Lava','Geo','Purple','Stone'],
+  wolf: ['White','Purple','Geo','Smoke','Fire'],
+  aura: ['Red','Blue','Pink','Teal','Black']
+};
+
+const ABI = [
+  "function mint() external payable",
+  "function totalSupply() external view returns (uint256)",
+  "function MINT_PRICE() external view returns (uint256)",
+  "function getTraits(uint256) external view returns (uint8[4])"
+];
+
+let provider, signer, contract, walletAddress;
+let previewBg=0, previewStone=0, previewWolf=0, previewAura=0;
+
+const connectBtn = document.getElementById('connectBtn');
+const mintBtn = document.getElementById('mintBtn');
+const statusDiv = document.getElementById('statusContainer');
+const canvas = document.getElementById('previewCanvas');
+const ctx = canvas.getContext('2d');
+
+function randomTrait() { return Math.floor(Math.random() * 5); }
+
+function shuffle() {
+  previewBg = randomTrait();
+  previewStone = randomTrait();
+  previewWolf = randomTrait();
+  previewAura = randomTrait();
+  document.getElementById('tBg').textContent = TRAIT_NAMES.bg[previewBg];
+  document.getElementById('tStone').textContent = TRAIT_NAMES.stone[previewStone];
+  document.getElementById('tWolf').textContent = TRAIT_NAMES.wolf[previewWolf];
+  document.getElementById('tAura').textContent = TRAIT_NAMES.aura[previewAura];
+  const combo = previewBg*125 + previewStone*25 + previewWolf*5 + previewAura;
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = () => {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+  };
+  img.src = `https://ipfs.io/ipfs/${COMPOSITE_CID}/${combo}.webp`;
+}
+
+async function connectWallet() {
+  if (!window.ethereum) { showStatus('Please install MetaMask or Rabby', 'error'); return; }
+  try {
+    await window.ethereum.request({ method: 'eth_requestAccounts' });
+    provider = new ethers.BrowserProvider(window.ethereum);
+    signer = await provider.getSigner();
+    walletAddress = (await signer.getAddress()).toLowerCase();
+    contract = new ethers.Contract(ADDRESS, ABI, signer);
+    connectBtn.textContent = walletAddress.slice(0,6) + '...' + walletAddress.slice(-4);
+    mintBtn.disabled = false;
+    const total = Number(await contract.totalSupply());
+    document.getElementById('mintedCount').textContent = total;
+    document.getElementById('supplyBar').style.width = (total/625*100)+'%';
+    showStatus('Wallet connected', 'success');
+    window.ethereum.on('accountsChanged', () => location.reload());
+    window.ethereum.on('chainChanged', () => location.reload());
+  } catch (e) { showStatus('Failed to connect', 'error'); }
+}
+
+async function mint() {
+  if (!contract) return;
+  try {
+    mintBtn.disabled = true;
+    mintBtn.textContent = 'Minting...';
+    const price = await contract.MINT_PRICE();
+    const tx = await contract.mint({ value: price });
+    showStatus('Confirming...', 'info');
+    await tx.wait();
+    showStatus('Wolf minted!', 'success');
+    const total = Number(await contract.totalSupply());
+    document.getElementById('mintedCount').textContent = total;
+    document.getElementById('supplyBar').style.width = (total/625*100)+'%';
+    shuffle();
+  } catch (e) {
+    if (e.code !== 'ACTION_REJECTED') showStatus(e.reason || e.message, 'error');
+  } finally {
+    mintBtn.disabled = false;
+    mintBtn.textContent = 'Mint Wolf';
+  }
+}
+
+function showStatus(msg, type) {
+  statusDiv.innerHTML = `<div class="status ${type}">${msg}</div>`;
+}
+
+connectBtn.addEventListener('click', connectWallet);
+mintBtn.addEventListener('click', mint);
+document.getElementById('shuffleBtn').addEventListener('click', shuffle);
+shuffle();
+</script>
+</body>
+</html>
