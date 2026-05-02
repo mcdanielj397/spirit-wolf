@@ -170,10 +170,9 @@ const TRAIT_NAMES = {
 };
 
 const ABI = [
-  "function mint() external payable",
-  "function totalSupply() external view returns (uint256)",
-  "function MINT_PRICE() external view returns (uint256)",
-  "function getTraits(uint256) external view returns (uint8[4])"
+  {"type":"function","name":"mint","inputs":[],"outputs":[],"stateMutability":"payable"},
+  {"type":"function","name":"totalSupply","inputs":[],"outputs":[{"type":"uint256"}],"stateMutability":"view"},
+  {"type":"function","name":"MINT_PRICE","inputs":[],"outputs":[{"type":"uint256"}],"stateMutability":"view"}
 ];
 
 let provider, signer, contract, walletAddress;
