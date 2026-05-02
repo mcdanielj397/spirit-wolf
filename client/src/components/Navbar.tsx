@@ -24,6 +24,9 @@ export function Navbar() {
           <Link href={basePath + "/about"} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden md:block">
             Our Story
           </Link>
+          <a href={basePath + "/mint/"} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors hidden md:block">
+            Mint
+          </a>
           <a 
             href="https://spiritwolf.dashery.com/" 
             target="_blank" 
