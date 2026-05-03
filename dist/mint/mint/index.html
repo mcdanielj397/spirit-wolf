@@ -170,9 +170,10 @@ const TRAIT_NAMES = {
 };
 
 const ABI = [
-  {"type":"function","name":"mint","inputs":[],"outputs":[],"stateMutability":"payable"},
-  {"type":"function","name":"totalSupply","inputs":[],"outputs":[{"type":"uint256"}],"stateMutability":"view"},
-  {"type":"function","name":"MINT_PRICE","inputs":[],"outputs":[{"type":"uint256"}],"stateMutability":"view"}
+  {"inputs":[],"name":"mint","outputs":[],"stateMutability":"payable","type":"function"},
+  {"inputs":[],"name":"MINT_PRICE","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+  {"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},
+  {"inputs":[],"name":"mintOpen","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"}
 ];
 
 let provider, signer, contract, walletAddress;
