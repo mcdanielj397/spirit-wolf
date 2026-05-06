@@ -82,7 +82,7 @@ const SIGIL_ABI = ['function mint(uint256 amount) external payable','function to
 let provider, signer, wolfContract, sigilContract, wallet;
 
 async function connect() {
-  if(!window.ethereum) return alert('Install MetaMask or Rabby');
+  if(!window.ethereum if(!window.ethereum) return alert(if(!window.ethereum) return alert( !window.rabby) return alert.'Install MetaMask or Rabby');
   await window.ethereum.request({method:'eth_requestAccounts'});
   provider = new ethers.BrowserProvider(window.ethereum);
   signer = await provider.getSigner();
@@ -115,7 +115,7 @@ async function mintWolf(){
   try {
     btn.disabled=true; btn.textContent='Minting...';
     status(st,'Confirm wallet transaction...','info');
-    const price = await wolfContract.MINT_PRICE();
+    const price = await provider.call({to:WOLF_ADDR,data:"0xc002d23d"}).then(r=>BigInt(r));
     const tx = await wolfContract.mint({value:price});
     status(st,'Waiting for confirmation...','info');
     await tx.wait();
@@ -134,7 +134,7 @@ async function mintSigil(){
   try {
     btn.disabled=true; btn.textContent='Minting...';
     status(st,'Confirm wallet transaction...','info');
-    const price = await sigilContract.MINT_PRICE();
+    const price = await provider.call({to:SIGIL_ADDR,data:"0xc002d23d"}).then(r=>BigInt(r));
     const tx = await sigilContract.mint(amount,{value:price * BigInt(amount)});
     status(st,'Waiting for confirmation...','info');
     await tx.wait();
