@@ -64,6 +64,9 @@ export function Navbar() {
             <a href={basePath + "/mint/"} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2" onClick={() => setMobileOpen(false)}>
               Mint
             </a>
+            <a href={basePath + "/claim/"} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2" onClick={() => setMobileOpen(false)}>
+              Claim Tokens
+            </a>
             <a href={basePath + "/contribute/"} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2" onClick={() => setMobileOpen(false)}>
               Contribute
             </a>
