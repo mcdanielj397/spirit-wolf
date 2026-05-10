@@ -29,6 +29,9 @@ export function Navbar() {
             Our Story
           </Link>
           <a href={basePath + "/mint/"} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+          <a href={basePath + "/claim/"} className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors">
+            Claim
+          </a>
             Mint
           </a>
           <a 
