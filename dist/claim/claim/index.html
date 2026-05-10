@@ -36,7 +36,33 @@
 <body>
   <div class="container">
     <nav class="nav"><a href="/spirit-wolf/">← Back to Gallery</a><h1>Claim Tokens</h1><a href="/spirit-wolf/mint/">Mint →</a></nav>
+    
+    <div class="info-card" style="background:var(--card); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:2rem; backdrop-filter:blur(12px); margin-bottom:1rem;">
+      <h2 style="font-family:'Cinzel',serif; margin-bottom:1rem;">About the Tokens</h2>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem;">
+        <div>
+          <h3 style="color:var(--primary); margin-bottom:0.5rem;">🛡️ ALSA — Alsania Token</h3>
+          <p style="color:var(--muted); font-size:0.9rem; line-height:1.6;">
+            Sovereign token of the Alsania ecosystem. Built with anti-sweeper protocol, human verification, and staking rewards.
+            <br><strong>Supply:</strong> 100M | <strong>Staking:</strong> 10% APY | <strong>Gas:</strong> Pay with ALSA via Paymaster
+          </p>
+        </div>
+        <div>
+          <h3 style="color:var(--primary); margin-bottom:0.5rem;">🐺 SPIRIT — SpiritWolf Token</h3>
+          <p style="color:var(--muted); font-size:0.9rem; line-height:1.6;">
+            Native token of the Spirit Wolf ecosystem by WolfMan. Powers the Wolfpack NFT collection.
+            <br><strong>Supply:</strong> 100M | <strong>Staking:</strong> 10% APY | <strong>Use:</strong> Mint NFTs, play games
+          </p>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem; padding:1rem; background:rgba(139,92,246,0.05); border:1px solid rgba(139,92,246,0.15); border-radius:12px;">
+        <p style="color:var(--muted); font-size:0.8rem; line-height:1.5;">
+          <strong style="color:var(--primary);">💡 How it works:</strong> Claim 1 token every 24 hours after verifying you're human. The 0.01 POL stake is <strong>fully refundable</strong> after 7 days — not a fee. These tokens power the Alsania ecosystem: stake to earn yield, use them to mint NFTs, and soon — play games and pay gas with zero MATIC.
+        </p>
+      </div>
+    </div>
     <div class="claim-grid">
+
       <div class="claim-card"><span class="badge badge-mainnet">Polygon Mainnet</span><h2>ALSA</h2><div class="amount">1 ALSA/day</div><button class="btn btn-primary" onclick="claim('alsa','mainnet')">Verify & Claim</button><div id="alsa-mainnet-status"></div><div class="notice"><strong>🔒 Deposit:</strong> 0.01 POL one-time stake. <strong>Fully refundable</strong> after 7 days.</div><div class="notice" style="margin-top:0.5rem;"><strong>⚡ Powered by</strong> <a href="https://alsania-io.com/claim/" style="color:var(--primary);">Alsania</a></div></div>
       <div class="claim-card"><span class="badge badge-mainnet">Polygon Mainnet</span><h2>SPIRIT</h2><div class="amount">1 SPIRIT/day</div><button class="btn btn-primary" onclick="claim('spirit','mainnet')">Verify & Claim</button><div id="spirit-mainnet-status"></div><div class="notice"><strong>🔒 Deposit:</strong> Same setup. Stake once, claim daily, refund anytime.</div></div>
       <div class="claim-card"><span class="badge badge-testnet">Amoy Testnet</span><h2>ALSA Test</h2><div class="amount">1 ALSA/day</div><button class="btn btn-primary" onclick="claim('alsa','amoy')">Verify & Claim</button><div id="alsa-amoy-status"></div><div class="notice"><strong>🧪 Testnet:</strong> Free Amoy tokens.</div></div>
