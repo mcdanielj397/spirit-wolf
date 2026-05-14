@@ -1,0 +1,27 @@
+{
+  "name": "Wolfpack #562",
+  "description": "A unique wolf from the Wolfpack collection by WolfMan.",
+  "image": "ipfs://CID/562.webp",
+  "external_url": "https://spiritwolf3397.github.io/spirit-wolf/mint",
+  "artist": "WolfMan",
+  "partner": "Alsania I/O \u2014 alsania-io.com",
+  "license": "https://spiritwolf3397.github.io/spirit-wolf/license",
+  "attributes": [
+    {
+      "trait_type": "Background",
+      "value": "Scene 4"
+    },
+    {
+      "trait_type": "Stone",
+      "value": "Stone 2"
+    },
+    {
+      "trait_type": "Wolf",
+      "value": "Wolf 2"
+    },
+    {
+      "trait_type": "Aura",
+      "value": "Aura 2"
+    }
+  ]
+}
