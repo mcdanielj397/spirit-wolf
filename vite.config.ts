@@ -7,7 +7,7 @@ export default defineConfig({
   // For user/org pages (username.github.io), use "/"
   // For project pages (username.github.io/repo-name), use "/repo-name/"
   // Use "/" in development, repo name in production
-  base: process.env.NODE_ENV === "production" ? "/spirit-wolf/" : "/",
+  base: process.env.NODE_ENV === "production" ? "/" : "/",
   
   plugins: [react()],
   resolve: {
